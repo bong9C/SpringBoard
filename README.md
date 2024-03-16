@@ -1,2 +1,2 @@
 # SpringBoard
-SpringBoard 만들
+SpringBoard 만들기
