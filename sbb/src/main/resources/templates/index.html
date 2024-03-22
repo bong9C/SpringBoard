@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
     <meta charset="utf-8">
     <title>Index</title>
@@ -9,36 +10,33 @@
   .background-container {
     position: relative;
     background-image: url('img/pig.png'); /* 이미지 경로 수정 */
-    background-size: contain;
+    background-size: 30%;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 900px; /* 컨테이너 높이 */
+    height: 400px; /* 컨테이너 높이 */
     width: 100%;
   }
   
   .content-container {
     position: absolute;
-    top: 900px; /* background-container 높이에 맞춤 */
+    top: 350px; /* background-container 높이에 맞춤 */
     left: 0;
     width: 100%;
   }
 </style>
 </head>
 <body>
+<nav th:replace="~{navbar :: navbarFragment}"></nav>
+   <div class="d-flex justify-content-center mt-2">
+    </div>
+<th:block layout:fragment="content"></th:block>
 <div class="container h-100">
   <div class="row justify-content-center align-items-center">
     <div class="col-12">
       <div class="background-container"></div>
       <div class="content-container text-center">
       <h2>도원결의</h2>
-           <div class="d-flex justify-content-center mt-2">
-                <!-- question_list로 가는 버튼 -->
-                <a href="/question/list" class="btn btn-primary mr-2">공지사항 바로가기</a>
-                <!-- login_form으로 가는 버튼 -->
-                <a href="/user/login" class="btn btn-secondary mr-2">로그인</a>
-                <!-- signup_form으로 가는 버튼 -->
-                <a href="/user/signup" class="btn btn-success">회원가입</a>
-            </div>
+      <a href="/gallery" class="btn btn-primary mr-2">gallery</a>
         </div>
     </div>
 </div>

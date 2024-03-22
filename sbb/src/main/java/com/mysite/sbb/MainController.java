@@ -16,4 +16,9 @@ public class MainController {
     public String root() {
         return "index";
     }
+    
+    @GetMapping("/gallery")
+    public String root1() {
+    	return "gallery";
+    }
 }
