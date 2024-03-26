@@ -9,7 +9,7 @@
 <style>
   .background-container {
     position: relative;
-    background-image: url('img/pig.png'); /* 이미지 경로 수정 */
+    background-image: url('img/pig.png'); /* 이미지 경로 */
     background-size: 30%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -23,22 +23,39 @@
     left: 0;
     width: 100%;
   }
+  
+  .latest-posts {
+    padding: 20px;
+    background-color: #f8f9fa; /* 배경색 */
+    border-right: 1px solid #ddd; /* 오른쪽 테두리 */
+    height: 100vh; /* 전체 화면 높이 */
+  }
 </style>
 </head>
+
 <body>
 <nav th:replace="~{navbar :: navbarFragment}"></nav>
-   <div class="d-flex justify-content-center mt-2">
-    </div>
-<th:block layout:fragment="content"></th:block>
-<div class="container h-100">
-  <div class="row justify-content-center align-items-center">
-    <div class="col-12">
-      <div class="background-container"></div>
-      <div class="content-container text-center">
-      <h2>도원결의</h2>
-      <a href="/gallery" class="btn btn-primary mr-2">gallery</a>
-        </div>
-    </div>
+<div class="container-fluid h-100">
+    <div class="row h-100">
+		<!-- 최신 공지사항 영역 -->
+		<div class="col-md-3 latest-posts">
+			<h4>최신 공지사항</h4>
+			<!-- 공지사항 내용 추가 -->
+		</div>
+		
+		<!-- 메인 컨텐츠 영역 -->
+		<div class="col-md-9">
+		    <div class="background-container">
+                <!-- 배경 이미지 컨테이너, 필요한 경우 내용 추가 -->
+            </div>
+            <div class="content-container text-center">
+                <div class="d-flex justify-content-center mt-2"></div>
+                <th:block layout:fragment="content"></th:block>
+                <h2>도원결의</h2>
+                <a href="/gallery" class="btn btn-primary mr-2">gallery</a>
+            </div>
+		</div>
+	</div>
 </div>
 
 <!-- 부트스트랩 JS, Popper.js, and jQuery -->

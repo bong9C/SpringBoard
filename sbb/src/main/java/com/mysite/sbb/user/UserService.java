@@ -16,7 +16,8 @@ public class UserService {
 	
 	private final UserRepository userRepository;
 	private final PasswordEncoder passwordEncoder;
-	
+
+	// 생성자가 왜 클래스 이름이 아니라 siteuser 이 들어갈까?
 	public SiteUser create(String username, String email, String password) {
 		SiteUser user = new SiteUser();
 		user.setUsername(username);
