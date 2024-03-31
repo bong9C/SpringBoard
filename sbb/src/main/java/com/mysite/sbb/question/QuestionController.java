@@ -30,6 +30,14 @@ public class QuestionController {
 
 	private final QuestionService questionService;
 	private final UserService userService;
+	
+	@GetMapping("/main")
+	public String main(Model model) {
+		List<Question> addQuestion = questionService.getList();
+		model.addAttribute("a", addQuestion);
+		System.out.println(addQuestion);
+		return "index";
+	}
 
     @GetMapping("/list")
     public String list(Model model, @RequestParam(value="page", defaultValue="0") int page, @RequestParam(value = "kw", defaultValue = "") String kw) {

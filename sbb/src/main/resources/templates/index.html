@@ -1,15 +1,16 @@
 <!doctype html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
 
 <head>
     <meta charset="utf-8">
     <title>Index</title>
     <!-- 부트스트랩 CSS 추가 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <style>
   .background-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
     position: relative;
-    background-image: url('img/pig.png'); /* 이미지 경로 */
     background-size: 30%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -31,6 +32,7 @@
     height: 100vh; /* 전체 화면 높이 */
   }
 </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -39,13 +41,18 @@
     <div class="row h-100">
 		<!-- 최신 공지사항 영역 -->
 		<div class="col-md-3 latest-posts">
-			<h4>최신 공지사항</h4>
-			<!-- 공지사항 내용 추가 -->
+		<h4>최신 공지사항</h4>
+			<ul>
+			    <li th:each="question : ${a}">
+			        <span th:text="${question.subject}">공지사항 제목</span>
+			    </li>
+			</ul>
 		</div>
 		
 		<!-- 메인 컨텐츠 영역 -->
 		<div class="col-md-9">
 		    <div class="background-container">
+				<img src="/img/pig.png" style="width: 50%; height: 80%;">
                 <!-- 배경 이미지 컨테이너, 필요한 경우 내용 추가 -->
             </div>
             <div class="content-container text-center">
